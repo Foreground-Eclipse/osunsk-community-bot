@@ -1,7 +1,6 @@
 import disnake
 from disnake.ext.commands import InteractionBot
 import os
-import json
 from internal.storage.sqlite import initializeDatabaseSchema, getInfoByCommandName,checkIfCommandNameTaken
 intents = disnake.Intents.all()
 bot = InteractionBot(intents=intents)
@@ -36,4 +35,4 @@ for file in os.listdir(r"./cogs"):
     if file.endswith(".py"):
         bot.load_extension(f"cogs.{file[:-3]}")
 
-bot.run(os.getenv["OSUNSK_TOKEN"])
+bot.run(os.getenv("OSUNSK_TOKEN"))
